@@ -6,5 +6,5 @@ This scripts use the github API and my jed.js utility for getting and parsing da
 
 make : create .json files
 make clean : clean .json files
-TODO: make deploy : copy the .json to my personal page dir ;) ... ready to go!
+make deploy : copy the .json to my personal page dir ;) ... ready to go!
 
