@@ -2,7 +2,7 @@
 
 
 
-curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork == false '" | ../jed.js -m "' _.name '" | ../jed.js -ma "
+cat my_repos.json | ../jed/jed.js -m "' _.name '" | ../jed/jed.js -ma "
 	function(name, setter){
         var output = '';
         fork(
@@ -18,7 +18,7 @@ curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork =
                         setter(data);
                         return true;
                 });
-  }" | ../jed.js -r "
+  }" | ../jed/jed.js -r "
 	function(res, input){ 
 		if(input){
 			for(var i in input){
@@ -28,13 +28,13 @@ curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork =
 			} 
 		} 
 		return res;
-	} " "{}" | ../jed.js -r "
+	} " "{}" | ../jed/jed.js -r "
 	function(res, input){
 		res.push( [ input.key, input.value] );
 		
 		return res;
 	}
-	" "[]" | ../jed.js -do "
+	" "[]" | ../jed/jed.js -do "
 	function(obj, args){
 		obj.sort(function (a1, a2){
 			// Order by codebase size, the second subscript of the element
@@ -42,6 +42,6 @@ curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork =
 		});
 		return obj;
 	}
-	" > languages.json
+	"
 
 

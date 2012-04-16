@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #echo "[\"Jed\"]" | ../jed.js -ma "
-curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork == false '" | ../jed.js -m "' _.name '" | ../jed.js -ma "
+cat my_repos.json | ../jed/jed.js -m "' _.name '" | ../jed/jed.js -ma "
  /* Get list of commits for each personal repository */
 	function(name, setter){
         var output = '';
@@ -20,9 +20,9 @@ curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork =
 									'commits': data});
                         return true;
                 });
-  }" | ../jed.js -s " /* Filter by author */
+  }" | ../jed/jed.js -s " /* Filter by author */
 		'1 == 1'
-	" | ../jed.js -m " /* Transform. For each element, count the nbr of commits */
+	" | ../jed/jed.js -m " /* Transform. For each element, count the nbr of commits */
 		function(x){ 
 			var ret = [];
 			var repo = x.repo;
@@ -43,7 +43,7 @@ curl "https://api.github.com/users/fabriceleal/repos" | ../jed.js -s "' _.fork =
 
 			return ret;
 		} 
-	" | ../jed.js -do "  /* Re-arranje to match the structure that google whats :| */
+	" | ../jed/jed.js -do "  /* Re-arranje to match the structure that google whats :| */
 		function(input, args){
 			var ret = {};
 
