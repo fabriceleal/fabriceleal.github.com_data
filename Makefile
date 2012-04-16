@@ -27,3 +27,7 @@ languages.json: languages.sh my_repos.json
 .PHONY: clean
 clean:
 	rm *.json
+
+.PHONY: deploy
+deploy:
+	cp *.json ../fabriceleal.github.com
