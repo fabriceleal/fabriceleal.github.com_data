@@ -45,5 +45,6 @@
 		dict = functional.reduce(function(res, inp){ res[ inp[1].slice(0, 7) ]++; return res; }, dict, arg);
 		
 		return dict;
-	}"
+	}" | ./transform_to_dict.sh
+
 
