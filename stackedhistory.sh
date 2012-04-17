@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #echo "[\"Jed\"]" | ../jed.js -ma "
-cat my_repos.json | ../jed/jed.js -m "' _.name '" | ../jed/jed.js -ma "
+../jed/jed.js -m "' _.name '" | ../jed/jed.js -ma "
  /* Get list of commits for each personal repository */
 	function(name, setter){
         var output = '';
