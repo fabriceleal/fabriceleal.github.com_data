@@ -1,6 +1,6 @@
 #!/bin/bash
 
-../jed/jed.js -m " '_.language' " | ../jed/jed.js -r "
+cat my_repos.json | ../jed/jed.js -m " '_.language' " | ../jed/jed.js -r "
 	function(res, input){
 		if(input == null){
 			input = \"unknown\";
