@@ -16,10 +16,10 @@
 		var dict = {};
 		var mt = startMt;
 
-		console.log(startYr);
+		/*console.log(startYr);
 		console.log(startMt);
 		console.log(endYr);
-		console.log(endMt);
+		console.log(endMt);*/
 		//return null;
 
 		for(var yr = startYr; yr <= endYr; ++yr){
