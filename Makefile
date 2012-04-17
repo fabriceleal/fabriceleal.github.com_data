@@ -1,7 +1,7 @@
 
 
 
-final: repos_time.json repos_language.json stackedhistory.json languages.json repositories.json
+final: repos_time.json repos_language.json stackedhistory.json languages.json repositories.json repos_created.json
 
 #languages.json stackedhistory.json repos_time.json
 
@@ -21,6 +21,9 @@ stackedhistory.json: stackedhistory.sh my_repos.json
 	cat my_repos.json | ./$< > $@
 
 languages.json: languages.sh my_repos.json
+	cat my_repos.json | ./$< > $@
+
+repos_created.json: repos_created.sh my_repos.json
 	cat my_repos.json | ./$< > $@
 
 #%.json : %.sh
