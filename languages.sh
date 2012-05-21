@@ -26,13 +26,13 @@
 			} 
 		} 
 		return res;
-	} " "{}" | ../jed/jed.js -r "
+	} " -i "{}" | ../jed/jed.js -r "
 	function(res, input){
 		res.push( [ input.key, input.value] );
 		
 		return res;
 	}
-	" "[]" | ../jed/jed.js -do "
+	" -i "[]" | ../jed/jed.js -d "
 	function(obj, args){
 		obj.sort(function (a1, a2){
 			// Order by codebase size, the second subscript of the element
@@ -41,4 +41,3 @@
 		return obj;
 	}
 	"
-
