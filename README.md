@@ -15,3 +15,9 @@ make deploy : copy the .json to my personal page dir ;) ... ready to go!
 
 TODO: 
 * Unique place to put the user name.
+
+## Watch out!
+
+The github API forces pagging automatically; I'm assuming that I have no more of 100 entries in number of repositories and commits per
+repository (check the files my_repos.sh and repos_commits.js). I must change this to be more "dynamic".
+
