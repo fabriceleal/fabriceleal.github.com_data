@@ -3,7 +3,7 @@ function(name, setter){
      var output = '';
      fork(
              'curl',
-             [ 'https://api.github.com/repos/fabriceleal/' + name + '/commits?per_page=100' ],
+             [ 'https://api.github.com/repos/fabriceleal/' + name + '/commits?per_page=500' ],
              null,
              function(data){
                      output += data;
