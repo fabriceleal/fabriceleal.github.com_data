@@ -13,12 +13,10 @@
 
 		for(var yr = startYr; yr <= endYr; ++yr){
 			for(; mt <= 12; mt = mt + 1 ){
-
 				dict[ (new Date(yr, mt)).toJSON().slice(0, 7)  ] = 0;
 				
 				if(mt == endMt && yr == endYr){
-					yr = 9999; // This will break the external for
-					mt = 9999; // Break this for	
+					break;
 				}
 			}
 			mt = 0;
