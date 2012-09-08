@@ -3,5 +3,6 @@ function(arg){
 	for(var i in arg){
 		ret.push([i, arg[i]]);
 	} 
-	return ret; 
+	// ascendent
+	return ret.sort(function(a, b){ return a > b; }); 
 }
