@@ -1,6 +1,8 @@
  
 	function(arg){
+		// Find min date
 		var start = functional.reduce(function(res, inp){ if(new Date(inp[1]) > new Date(res)){ return res; } else { return inp[1];} }, (new Date()).toJSON(), arg);
+		// Find max date
 		var end = functional.reduce(function(res, inp){ if(new Date(inp[1]) < new Date(res)){ return res; } else { return inp[1];} }, (new Date()).toJSON(), arg);
 		
 		// Create dates

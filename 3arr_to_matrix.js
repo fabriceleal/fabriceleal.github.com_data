@@ -6,11 +6,16 @@ function(input, args){
 		/* Get list of all the projects */
 		ret['projects'] = functional.map('_[0][0]', input);
 
+<<<<<<< HEAD
 		var today = new Date();
 		var startY = 2011;
 		var startM = 8;
 		var endY = today.getYear() + 1900;
 		var endM = today.getMonth() + 1;
+=======
+	// TODO Make this dynamic! >:(
+	ret['months'] = ['2011-08', '2011-09', '2011-10', '2011-11', '2011-12', '2012-01', '2012-02', '2012-03', '2012-04', '2012-05', '2012-06', '2012-07'];
+>>>>>>> d14d2b9af3346774b8c14b6ae8ffb0516c5662c6
 
 		ret['months'] = [];
 	
