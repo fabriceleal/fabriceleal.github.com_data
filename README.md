@@ -14,7 +14,7 @@ make clean : clean .json files
 make deploy : copy the .json to my personal page dir ;) ... ready to go!
 
 TODO: 
-* Unique place to put the user name.
+* Unique place to put the user name / date ranges / etc, etc ... 
 
 ## Watch out!
 
