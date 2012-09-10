@@ -8,7 +8,7 @@ function(input, args){
 
 		var today = new Date();
 		var startY = 2011;
-		var startM = 8;
+		var startM = 9;
 		var endY = today.getYear() + 1900;
 		var endM = today.getMonth() + 1;
 
