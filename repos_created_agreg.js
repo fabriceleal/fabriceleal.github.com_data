@@ -7,21 +7,21 @@
 		
 		// Create dates
 		var startYr = (new Date(start)).getYear() + 1900;
-		var startMt = (new Date(start)).getMonth(); 
+		var startMt = (new Date(start)).getMonth() + 1; 
 		var endYr = (new Date(end)).getYear() + 1900;
-		var endMt = (new Date(end)).getMonth(); 
+		var endMt = (new Date(end)).getMonth() + 1; 
 		var dict = {};
 		var mt = startMt;
 
 		for(var yr = startYr; yr <= endYr; ++yr){
-			for(; mt <= 12; mt = mt + 1 ){
-				dict[ (new Date(yr, mt)).toJSON().slice(0, 7)  ] = 0;
+			for(; mt <= 12; ++mt ){
+				dict[ yr + '-' + (mt < 10 ? '0' + mt : mt)  ] = 0;
 				
 				if(mt == endMt && yr == endYr){
 					break;
 				}
 			}
-			mt = 0;
+			mt = 1;
 		}
 
 		dict = functional.reduce(function(res, inp){ res[ inp[1].slice(0, 7) ]++; return res; }, dict, arg);
